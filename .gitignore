@@ -21,3 +21,29 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Support for Project snippet scope
+!.vscode/*.code-snippets
+
+# nodejs
+node_modules
+dist/*
+build/*
+*.log
+.DS_Store
