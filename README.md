@@ -20,5 +20,15 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## npm install
+```
+npm i axios
+
+npm i vue-router@3.2.0
+
+npm i vuex@2.0.0
+
+npm i sass
+npm i sass-loader@10
+npm i sass-loader
+```

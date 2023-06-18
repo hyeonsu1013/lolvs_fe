@@ -1,0 +1,74 @@
+/*******************************************************************
+// 위치 : src/assets/scss/variables.scss
+// 설명 : 프로젝트 전체에 적용되는 변수에 대해 정의함
+// 주의 : 컴포넌트 갯수 만큼 실행되기 때문에 변수에 대해서만 정의해야합니다. 
+          (실제 CSS에 대한 적용은 _index.scss에 작성)
+//        이 파일은 vue.config.js에 설정되면 됨
+********************************************************************/
+// vuetify를 사용할 경우 vuetify의 일부 변수를 사용할 수 있음
+@import "~vuetify/src/styles/styles.sass"; 
+
+// Vuetify Globals
+// Vuetify에 자동으로 오버라이드 됨
+///////////////////////////////////////////////
+
+/*
+ * size
+ */
+$size-width-default-max : 768px;
+$size-width-title-max : 1000px;
+
+/*
+ *
+ */
+$body-font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+$border-radius-root: 6px;
+$font-size-root: 14px;
+
+/*
+ * color
+ */
+$color-main : #F2DEBA;
+$color-main-light1 : #f0e1c5;
+$color-main-light2 : #ece2cf;
+$color-main-light3 : #f8f1e4;
+$color-main-light4 : #fdfaf4;
+$color-main-darken1 : #d3be98;
+$color-main-darken2 : #ac9365;
+$color-main-darken3 : #836939;
+$color-main-darken4 : #5a4319;
+
+$color-main-part : #FFEFD6;
+
+$color-main-part2 : #0E5E6F;
+$color-main-part2-light1 : #217081;
+$color-main-part2-light2 : #4590a1;
+$color-main-part2-light3 : #68aab9;
+
+$color-main-part3 : #3A8891;
+$color-main-part3-light1 : #518d94;
+$color-main-part3-light2 : #6ea2a8;
+$color-main-part3-light3 : #9bc9ce;
+$color-main-part3-light4 : #cbecf0;
+
+
+
+$color-white : #ffffff;
+$color-black : #000000;
+$color-sub : #334455;
+$color-gray-1 : #333333;
+$color-gray-2 : #666666;
+$color-gray-3 : #999999;
+
+
+$color-red-light5 : #ffebee;
+$color-brown-light5 : #efebe9;
+$color-orange-light5 : #fffaf5;
+$color-gray-light5 : #f5f5f5;
+
+
+/*
+ * font
+ */
+ $font-main : 'Nanum Gothic', sans-serif;
+ $font-title : 'Gamja Flower', cursive;
