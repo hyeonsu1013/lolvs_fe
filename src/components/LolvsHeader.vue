@@ -17,7 +17,9 @@
         </div>
 
         <div class="menu_wrapper color_white">
-          <v-breadcrumbs :items="menuItems" large/>
+          <v-breadcrumbs :items="menuItems" large>
+            <template v-slot:divider> | </template>
+          </v-breadcrumbs>
         </div>
       </div>
     </v-app-bar>
@@ -35,17 +37,17 @@ export default {
         {
           text: '리그별 통계',
           disabled: false,
-          href: '/a',
+          href: '/league',
         },
         {
           text: '선수별 통계',
           disabled: false,
-          href: '/b',
+          href: '/pro',
         },
         {
           text: '챔피언별 통계',
           disabled: false,
-          href: '/c',
+          href: '/champion',
         },
       ]
     }
