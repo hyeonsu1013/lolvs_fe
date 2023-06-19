@@ -81,9 +81,7 @@ export default {
 				records.push(menuItem);
 			}
 
-      // TODO 작업 추가
-
-      // router 추가
+      // router 추가 TODO 에러
       Vue.prototype._routelist = records;
       records.forEach(e => {
         router.addRoute(e);
