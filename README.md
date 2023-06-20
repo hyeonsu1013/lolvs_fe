@@ -33,4 +33,4 @@ npm i sass-loader@10
 npm i sass-loader
 ```
 
-커밋 테스트5
+커밋 테스트6
