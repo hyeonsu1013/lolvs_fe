@@ -81,11 +81,9 @@ export default {
 				records.push(menuItem);
 			}
 
-      // router 추가 TODO 에러
+      // router
       Vue.prototype._routelist = records;
-      records.forEach(e => {
-        router.addRoute(e);
-      })
+      router.addRoutes(records);
     },
 
     // alert Data 초기화
