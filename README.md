@@ -32,5 +32,3 @@ npm i sass
 npm i sass-loader@10
 npm i sass-loader
 ```
-
-커밋테스트
