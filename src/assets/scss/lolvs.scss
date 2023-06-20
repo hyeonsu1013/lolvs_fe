@@ -6,6 +6,7 @@
   padding: 0;
   margin: 80px auto 0 auto;
   height: calc(100% - 80px);
+  background: linear-gradient(to bottom, $color-main-part2-dark3, $color-main-part2-dark2);
 }
 @media only screen and (max-width: $size-width-default-max) {
     .main-content{
@@ -116,4 +117,9 @@
 .around {
   -webkit-justify-content: space-around;
   justify-content: space-around;
+}
+
+// 마우스 포인터
+.click_pointer {
+  cursor: pointer;
 }
