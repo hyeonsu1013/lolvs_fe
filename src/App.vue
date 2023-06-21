@@ -1,12 +1,18 @@
 <template>
   <v-app>
     <LolvsHeader/>
-    <v-main>
+    <v-main class="main">
       <div class="main-content">
+        <div class="left">
+        </div>
+        <div class="center">
           <router-view/>
+        </div>
+        <div class="right">
+        </div>
       </div>
-      <LolvsFooter/>
     </v-main>
+    <LolvsFooter/>
     <!-- <LolvsAlert
       :iconType="alertData.iconType"
       :maxWidth="alertData.maxWidth"

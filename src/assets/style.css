@@ -5,9 +5,26 @@ html, body{
     margin: 0;
     /* font-family: 'Roboto Condensed', sans-serif; */
     font-family: 'Nanum Gothic', sans-serif !important;
+    overflow-y: auto !important;
 }
 
-a{
+html::-webkit-scrollbar {
+    width: 10px;
+}
+html::-webkit-scrollbar-track {
+    background: #cbecf0;
+    border-left: 1px solid #cbecf0;
+}
+html::-webkit-scrollbar-thumb {
+    background: #6ea2a8;
+    border: solid 2px #e6e6e6;
+    border-radius: 12px;
+}
+html::-webkit-scrollbar-thumb:hover {
+    background: #3A8891;
+}
+
+a {
     text-decoration: none;
 }
 

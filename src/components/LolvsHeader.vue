@@ -20,7 +20,7 @@
           <v-breadcrumbs :items="menuItems" large divider=" | ">
             <template v-slot:item="{ item }">
               <v-breadcrumbs-item class="click_pointer"
-                  :class="{fbold : currentMenu == item.order}"
+                :class="{active: currentMenu == item.order}"
                   @click="moveRouter(item)"
                   :disabled="item.disabled">
                 {{ item.text }}
@@ -43,9 +43,15 @@ export default {
       currentMenu : -1,
       mainItem : {
         domain: '/',
-        order : -1,
+        order : 0,
       },
       menuItems : [
+        {
+          text: '일정',
+          disabled: false,
+          domain: '/',
+          order : 0,
+        },
         {
           text: '리그별 통계',
           disabled: false,
