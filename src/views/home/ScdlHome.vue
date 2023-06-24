@@ -1,67 +1,35 @@
 <template>
-  <div>
-    <v-sheet
-      tile
-      height="54"
-      class="d-flex"
-    >
-      <v-btn
-        icon
-        class="ma-2"
-        @click="$refs.calendar.prev()"
-      >
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn>
-      <v-select
-        v-model="type"
-        :items="types"
-        dense
-        outlined
-        hide-details
-        class="ma-2"
-        label="type"
-      ></v-select>
-      <v-select
-        v-model="mode"
-        :items="modes"
-        dense
-        outlined
-        hide-details
-        label="event-overlap-mode"
-        class="ma-2"
-      ></v-select>
-      <v-select
-        v-model="weekday"
-        :items="weekdays"
-        dense
-        outlined
-        hide-details
-        label="weekdays"
-        class="ma-2"
-      ></v-select>
-      <v-spacer></v-spacer>
-      <v-btn
-        icon
-        class="ma-2"
-        @click="$refs.calendar.next()"
-      >
-        <v-icon>mdi-chevron-right</v-icon>
-      </v-btn>
-    </v-sheet>
-    <v-sheet height="600">
-      <v-calendar
-        ref="calendar"
-        v-model="value"
-        :weekdays="weekday"
-        :type="type"
-        :events="events"
-        :event-overlap-mode="mode"
-        :event-overlap-threshold="30"
-        :event-color="getEventColor"
-        @change="getEvents"
-      ></v-calendar>
-    </v-sheet>
-  </div>
+  <v-row class="fill-height">
+    <v-col>
+      <v-sheet class="bg_transparent" height="64">
+        <v-toolbar flat class="lv_toolbar top_radius20 bg_main_gradient">
+          <v-btn outlined class="mr-4" color="white" @click="setToday">오늘</v-btn>
+          <v-btn fab text small color="white" @click="prev">
+            <v-icon small>mdi-chevron-left</v-icon>
+          </v-btn>
+          <v-btn fab text small color="white" @click="next">
+            <v-icon small>mdi-chevron-right</v-icon>
+          </v-btn>
+          <v-toolbar-title class="ml20" v-if="$refs.calendar">
+            {{ mainCalendar.title }}
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-btn v-if='type == "day"' class="mr-4 fc_white" color="teal darken-1" @click="viewMonth">월별</v-btn>
+        </v-toolbar>
+      </v-sheet>
+      <v-sheet height="600">
+        <v-calendar class="lv_calendar"
+          ref="calendar" v-model="focus" color="primary"
+          :locale="'ko-KR'" :event-more-text='"더보기"'
+          :events="events" :type="type"
+          @click:event="showEvent"
+          @click:more="viewDay"
+          @click:date="viewDay"
+          @change="updateRange"
+        ></v-calendar>
+      </v-sheet>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

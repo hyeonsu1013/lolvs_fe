@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- S: 상단 메뉴바 -->
-    <v-app-bar class="header_appbar" elevate-on-scroll height="80">
+    <v-app-bar class="header_appbar bg_main_gradient" elevate-on-scroll height="80">
       <div class="contents">
         <div class="title_wrapper">
           <v-toolbar-title class="title" @click="moveRouter(mainItem)">

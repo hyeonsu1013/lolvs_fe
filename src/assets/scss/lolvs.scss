@@ -5,12 +5,13 @@
 .main-content{
   padding: 0;
   margin: 80px auto 0 auto;
+  padding-top: 10px;
   height: calc(100% - 80px);
   background: linear-gradient(to bottom, $color-main-part2-dark3, $color-main-part2-dark2);
   display: flex;
   .center {
     min-width: 1080px;
-    min-height: 3000px;
+    height: 100%;
   }
   .left {
     width: 100%;
@@ -26,11 +27,13 @@
     }
 }
 
-.fmain { color: $color-main; }
-.fred { color: #ff2222; }
-.fblue { color: #4322ff; }
+.fc_main { color: $color-main !important;}
+.fc_red { color: #ff2222 !important;}
+.fc_blue { color: #4322ff !important;}
+.fc_white { color: #fff !important;}
+.fc_black { color: #000 !important;}
 
-.fbold { font-weight: bold; }
+.fw_bold { font-weight: bold; }
 
 .ma0 { margin: 0px !important; }
 .ma5 { margin: 5px !important; }
@@ -114,6 +117,11 @@
 
 .bg_orange_light { background-color: $color-orange-light5 !important;}
 .bg_gray_light { background-color: $color-gray-light5 !important;}
+.bg_transparent { background-color: transparent !important;}
+
+.bg_main_gradient {
+  background: linear-gradient(to right, $color-main-part2, $color-main-part3-light4) !important;
+}
 
 .center {
   -webkit-justify-content: center;

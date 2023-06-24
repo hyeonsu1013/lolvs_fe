@@ -1,0 +1,28 @@
+/* v-calendar */
+.lv_calendar {
+  border-top: 0 !important;
+  padding-right: 1px;
+
+  .v-calendar-weekly__day-label {
+    >button {
+      margin-bottom: 8px;
+    }
+  }
+
+  .v-calendar-weekly__head {
+    >div {
+      background-color: $color-main-part3-light4 !important;
+      color : black !important;
+      font-weight: bold;
+      font-size: 12px;
+    }
+  }
+}
+
+/* lv-calendar */
+.lv_toolbar {
+  color: $color-white !important;
+  &.top_radius20 {
+    border-radius: 20px 20px 0 0 !important;
+  }
+}

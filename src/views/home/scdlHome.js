@@ -2,29 +2,61 @@ export default {
   name: 'ScdlHome',
   data() {
       return {
+        mainCalendar : {
+          ref : null,
+          title : '',
+        },
+        focus: '',
         type: 'month',
-        types: ['month', 'week', 'day', '4day'],
-        mode: 'stack',
-        modes: ['stack', 'column'],
-        weekday: [0, 1, 2, 3, 4, 5, 6],
-        weekdays: [
-          { text: 'Sun - Sat', value: [0, 1, 2, 3, 4, 5, 6] },
-          { text: 'Mon - Sun', value: [1, 2, 3, 4, 5, 6, 0] },
-          { text: 'Mon - Fri', value: [1, 2, 3, 4, 5] },
-          { text: 'Mon, Wed, Fri', value: [1, 3, 5] },
-        ],
-        value: '',
         events: [],
         colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
         names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
       }
   },
   watch: {
+    'mainCalendar.ref.title': function(val) {
+      let split = val.split(" ");
+      if(split.length == 2) {
+        this.mainCalendar.title = `${split[1]}년 ${split[0]}`;
+      } else {
+        this.mainCalendar.title = val;
+      }
+    }
   },
   methods: {
-    getEvents ({ start, end }) {
+    // 일별 보기
+    viewDay ({ date }) {
+      this.focus = date;
+      this.type = 'day';
+    },
+    // 월별 보기
+    viewMonth() {
+      this.type = 'month';
+    },
+    // 오늘날짜 지정
+    setToday () {
+      this.focus = '';
+    },
+    // 이벤트의 컬러 가져오기
+    getEventColor (event) {
+      return event.color;
+    },
+    // 이벤트 자세히 보기
+    showEvent(event) {
+      console.log('event', event);
+    },
+    // 이전달
+    prev () {
+      this.$refs.calendar.prev();
+    },
+    // 다음달
+    next () {
+      this.$refs.calendar.next();
+    },
+    updateRange ({ start, end }) {
       const events = []
 
+      // 이벤트 설정하는 부분
       const min = new Date(`${start.date}T00:00:00`)
       const max = new Date(`${end.date}T23:59:59`)
       const days = (max.getTime() - min.getTime()) / 86400000
@@ -46,14 +78,15 @@ export default {
         })
       }
 
-      this.events = events
-    },
-    getEventColor (event) {
-      return event.color
+      this.events = events;
     },
     rnd (a, b) {
       return Math.floor((b - a + 1) * Math.random()) + a
     },
+  },
+  mounted () {
+    this.$refs.calendar.checkChange();
+    this.mainCalendar.ref = this.$refs.calendar;
   },
   created() {
   },
